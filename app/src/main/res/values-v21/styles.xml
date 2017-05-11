@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/main1</item>
+        <item name="colorPrimaryDark">@color/main1</item>
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+        <item name="android:windowBackground">@color/main1</item>
+    </style>
+
+
+    <style name="GreyTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorPrimaryDark">@color/status_grey</item>
+        <item name="android:statusBarColor">@color/status_grey</item>
+        <item name="android:colorPrimary">@color/action_grey</item>
+        <item name="android:windowBackground">@color/window_bg_grey</item>
+        <item name="android:navigationBarColor">@color/navigation_grey</item>
+        <item name="android:colorBackground">@color/bg_grey</item>
+        <item name="android:colorAccent">@color/control_activated_grey</item>
+        <item name="android:colorControlNormal">@color/control_normal_grey</item>
+    </style>
+
+    <style name="Translucent">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/scrim</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+</resources>

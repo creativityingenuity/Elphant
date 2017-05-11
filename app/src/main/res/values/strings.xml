@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">大象</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">关于我</string>
+    <string name="toolbar_title">大象</string>
+    <string name="about_text">
+        一只船孤独的航行在海上，\n
+        它既不寻求幸福，\n
+        也不逃避幸福，\n
+        它只是向前航行，\n
+        底下是沉静碧蓝的大海，\n
+        而头顶是金色的太阳。\n
+        将要直面的，\n
+        与已成过往的，\n
+        较之深埋于它内心的皆为微沫。
+    </string>
+    <string name="email">vipggxs@163.com</string>
+</resources>
