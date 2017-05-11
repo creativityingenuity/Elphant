@@ -52,38 +52,6 @@
             android:text="获取源代码"
             android:textColor="@color/text_common"
             android:textSize="@dimen/textSize_14" />
-        <LinearLayout
-            android:id="@+id/clear_cache_ll"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="@dimen/space_16"
-            android:paddingRight="@dimen/space_16"
-            android:paddingTop="@dimen/space_18"
-            android:paddingBottom="@dimen/space_18"
-            android:gravity="center_vertical"
-            android:background="@drawable/item_bg_line">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/space_8"
-                android:text="是否开启热修复"
-                android:textColor="@color/text_common"
-                android:textSize="@dimen/textSize_14"/>
-
-            <TextView
-                android:id="@+id/tv_isOpenTinker"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="right"
-                android:text="开启"
-                android:textColor="@color/text_content"
-                android:textSize="@dimen/textSize_12"
-                android:visibility="visible"
-                tools:visibility="visible"/>
-
-        </LinearLayout>
 
         <TextView
             android:id="@+id/tv_xieyi"

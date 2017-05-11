@@ -3,6 +3,8 @@ package com.gxs.elphant.base;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.gxs.elphant.Elephant;
+
 import butterknife.ButterKnife;
 
 /**
@@ -12,6 +14,7 @@ import butterknife.ButterKnife;
 
 public abstract class BaseActivity extends AppCompatActivity {
     protected static int mTheme = -1;
+    protected Elephant elephant ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,9 +23,17 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
         setContentView(setLayoutId());
         ButterKnife.bind(this);
+        elephant = (Elephant) getApplication();
+        elephant.addActivity(this);
         //初始化界面控件
         initView();
         initData();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        elephant.removeActivity(this);
     }
 
     protected abstract void initData();
