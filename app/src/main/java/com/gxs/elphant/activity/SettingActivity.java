@@ -1,5 +1,7 @@
 package com.gxs.elphant.activity;
 
+import android.app.ActivityManager;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.widget.Toolbar;
@@ -12,6 +14,8 @@ import com.gxs.elphant.R;
 import com.gxs.elphant.base.BaseActivity;
 import com.gxs.elphant.global.Constant;
 import com.gxs.elphant.util.SharedPreferencesUtil;
+
+import java.util.List;
 
 import butterknife.Bind;
 import cn.pedant.SweetAlert.SweetAlertDialog;
@@ -74,6 +78,22 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
      * 退出应用
      */
     private void exit() {
+        final ActivityManager am = (ActivityManager)getSystemService(Context.ACTIVITY_SERVICE);
+        if (am == null) {
+            return;
+        }
+        List<ActivityManager.RunningAppProcessInfo> appProcessList = am.getRunningAppProcesses();
+
+        if (appProcessList == null) {
+            return;
+        }
+
+        for (ActivityManager.RunningAppProcessInfo ai : appProcessList) {
+            // KILL OTHER PROCESS OF MINE
+            if (ai.uid == android.os.Process.myUid() && ai.pid != android.os.Process.myPid()) {
+                android.os.Process.killProcess(ai.pid);
+            }
+        }
         android.os.Process.killProcess(android.os.Process.myPid());
     }
 
