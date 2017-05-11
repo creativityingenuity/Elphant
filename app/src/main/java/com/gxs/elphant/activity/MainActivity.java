@@ -182,9 +182,6 @@ public class MainActivity extends BaseActivity
         } else if (id == R.id.nav_setting) {
             //设置
             startActivity(new Intent(this, SettingActivity.class));
-        } else if (id == R.id.nav_theme) {
-            //彩蛋  星座
-            startActivity(new Intent(this, EggActivity.class));
         } else if (id == R.id.nav_discussion) {
             //弹出一个loading  最新
             showUpdateDialog();

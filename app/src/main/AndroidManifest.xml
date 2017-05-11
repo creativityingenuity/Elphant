@@ -30,9 +30,10 @@
         <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.NewDetailActivity" />
         <activity android:name=".activity.SettingActivity" />
-        <activity android:name=".activity.AboutMeActivity"
+        <activity
+            android:name=".activity.AboutMeActivity"
             android:theme="@style/Translucent" />
-        <activity android:name=".activity.EggActivity"></activity>
+        <activity android:name=".activity.XieYiActivity"></activity>
     </application>
 
 </manifest>

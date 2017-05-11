@@ -1,5 +1,6 @@
 package com.gxs.elphant.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -13,6 +14,7 @@ import com.gxs.elphant.global.Constant;
 import com.gxs.elphant.util.SharedPreferencesUtil;
 
 import butterknife.Bind;
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class SettingActivity extends BaseActivity implements View.OnClickListener {
     @Bind(R.id.toolbar)
@@ -43,11 +45,36 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
-        // TODO: 2017/5/11  TTTTTTTTTTTTTTTTTTTTTTTTTTTT
         switch (v.getId()){
             case R.id.tv_fankui:
+                SweetAlertDialog sd = new SweetAlertDialog(this);
+                sd.setCancelable(true);
+                sd.setCanceledOnTouchOutside(true);
+                sd.setTitleText("请发邮件到vipggxs@163.com");
+                sd.show();
+                break;
+            case R.id.tv_get_open_source:
+                Intent intent = new Intent(this, NewDetailActivity.class);
+                intent.putExtra(Constant.NEWDETAIL,"https://github.com/creativityingenuity/Elphant");
+                startActivity(intent);
+                break;
+            case R.id.clear_cache_ll:
+
+                break;
+            case R.id.tv_xieyi:
+                startActivity(new Intent(this, XieYiActivity.class));
+                break;
+            case R.id.tv_exit:
+               exit();
                 break;
         }
+    }
+
+    /**
+     * 退出应用
+     */
+    private void exit() {
+        android.os.Process.killProcess(android.os.Process.myPid());
     }
 
     @Override
