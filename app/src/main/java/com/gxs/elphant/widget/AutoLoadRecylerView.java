@@ -20,13 +20,11 @@ public class AutoLoadRecylerView extends RecyclerView {
         this(context, null);
     }
 
-
     public AutoLoadRecylerView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         autoLoadScroller = new AutoLoadScroller();
         addOnScrollListener(autoLoadScroller);
     }
-
 
     public void setLoadMoreListener(AutoLoadRecylerView.loadMoreListener loadMoreListener) {
         this.loadMoreListener = loadMoreListener;
@@ -48,9 +46,9 @@ public class AutoLoadRecylerView extends RecyclerView {
         @Override
         public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
             super.onScrolled(recyclerView, dx, dy);
-			//判断是否是列表排列
+            //判断是否是列表排列
             if (getLayoutManager() instanceof LinearLayoutManager) {
-				//findLastVisibleItemPosition获取列表底部item对应记录下标
+                //findLastVisibleItemPosition获取列表底部item对应记录下标
                 int lastVisiblePos = ((LinearLayoutManager) getLayoutManager()).findLastVisibleItemPosition();
                 int itemCount = getAdapter().getItemCount();
                 if (loadMoreListener != null && !isLoading && lastVisiblePos > itemCount - 2 && dy > 0) {

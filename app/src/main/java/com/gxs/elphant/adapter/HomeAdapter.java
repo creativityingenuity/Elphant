@@ -21,24 +21,20 @@ import java.util.List;
 
 public class HomeAdapter extends FooterViewAdapter<NewsEntity.ResultBean.DataBean,HomeAdapter.HomeViewHolder>{
     private Context mContext;
-
     public HomeAdapter(List<NewsEntity.ResultBean.DataBean> result, Context mContext) {
         super(result);
         this.mContext = mContext;
     }
-
     @Override
     public HomeViewHolder onCreateItemViewHolder(ViewGroup parent, int viewType) {
         return new HomeViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_home, parent, false));
     }
-
     @Override
     public void onBindItemViewHolder(HomeViewHolder holder, int position) {
         final NewsEntity.ResultBean.DataBean data = list.get(position);
         Glide.with(mContext).load(data.thumbnail_pic_s).into(holder.mIcon);
         holder.mTitle.setText(data.title);
         holder.mAuthor.setText(data.author_name);
-
         //设置item点击事件
         if(mOnItemClickListener!=null){
             final int layoutPosition = holder.getLayoutPosition();
@@ -50,7 +46,6 @@ public class HomeAdapter extends FooterViewAdapter<NewsEntity.ResultBean.DataBea
             });
         }
     }
-
     private OnItemClickListener mOnItemClickListener;
     public interface OnItemClickListener {
         void onItemClick(String contact,int position);
@@ -62,12 +57,10 @@ public class HomeAdapter extends FooterViewAdapter<NewsEntity.ResultBean.DataBea
     public int getItemCount() {
         return list==null?0:list.size();
     }
-
     class HomeViewHolder extends RecyclerView.ViewHolder {
         ImageView mIcon;
         TextView mTitle;
         TextView mAuthor;
-
         public HomeViewHolder(View itemView) {
             super(itemView);
             mIcon = (ImageView) itemView.findViewById(R.id.item_icon);

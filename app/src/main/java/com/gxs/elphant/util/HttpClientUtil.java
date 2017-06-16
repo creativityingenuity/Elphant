@@ -24,10 +24,8 @@ import rx.functions.Action0;
 import rx.schedulers.Schedulers;
 
 /**
- * 3
  * 网络请求框架工具类，配置了rx+ok+retrofit
  */
-
 public class HttpClientUtil {
     private HttpClientUtil() {
         initOkhttp();
@@ -63,8 +61,6 @@ public class HttpClientUtil {
     public static void init(Context context, String baseUrl) {
         mContext = context;
         BASE_URL = baseUrl;
-//        initOkhttp();
-//        initRetrofit();
     }
 
     /**
@@ -87,12 +83,6 @@ public class HttpClientUtil {
 
     private void initOkhttp() {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
-        //打印请求log日志
-//        if (BuildConfig.DEBUG) {
-//            HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
-//            loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-//            builder.addInterceptor(loggingInterceptor);
-//        }
 
         //缓存处理
         Cache cache = new Cache(
@@ -148,10 +138,6 @@ public class HttpClientUtil {
 
         //错误重连
         builder.retryOnConnectionFailure(true);
-
-        //公共参数
-        //设置请求头
-        //设置cookies
 
         //以上设置结束，才能build(),不然设置白搭
         mOkHttpClient = builder.build();

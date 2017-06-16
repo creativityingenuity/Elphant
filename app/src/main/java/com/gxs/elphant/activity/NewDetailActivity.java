@@ -154,6 +154,4 @@ public class NewDetailActivity extends BaseActivity {
         }
         return true;
     }
-
-
 }

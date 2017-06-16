@@ -26,9 +26,9 @@ tinkerpatchSupport {
     def pathPrefix = "${bakPath}/${baseInfo}/${variantName}/"
     def name = "${project.name}-${variantName}"
     ///1
-    baseApkFile = "${pathPrefix}/${name}.apk"
+    baseApkFile = "app-1.0-0525-23-28-41/debug/app-debug.apk"
     baseProguardMappingFile = "${pathPrefix}/${name}-mapping.txt"
-    baseResourceRFile = "${pathPrefix}/${name}-R.txt"
+    baseResourceRFile = "app-1.0-0525-23-28-41/debug/app-debug-R.txt"
 
     /**
      *  若有编译多flavors需求, 可以参照： https://github.com/TinkerPatch/tinkerpatch-flavors-sample
