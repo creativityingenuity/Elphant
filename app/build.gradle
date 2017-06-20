@@ -9,6 +9,7 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     aaptOptions.cruncherEnabled = false
@@ -79,8 +80,7 @@ dependencies {
     compile(name:'loading', ext:'aar')
     //tinker
     compile "com.android.support:multidex:1.0.1"
-    //若使用annotation需要单独引用,对于tinker的其他库都无需再引用
-    provided("com.tinkerpatch.tinker:tinker-android-anno:${TINKER_VERSION}") { changing = true }
+    //无需引入tinker的任何库,使用tinkerpatch sdk即可
     compile("com.tinkerpatch.sdk:tinkerpatch-android-sdk:${TINKERPATCH_VERSION}") { changing = true }
 
 
